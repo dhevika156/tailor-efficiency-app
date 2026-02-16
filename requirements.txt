@@ -1,0 +1,16 @@
+# Streamlit web app
+streamlit==1.29.0
+
+# Data manipulation
+pandas==2.1.1
+
+# PDF generation
+reportlab==4.0.0
+
+# Rich is required by Streamlit for logging
+rich==14.3.2
+
+# Markdown parser (dependency for rich)
+markdown-it-py==4.0.0
+mdurl==0.1.2
+pygments==2.19.2
