@@ -1,0 +1,84 @@
+Step 1: Push your code to GitHub
+
+Create a GitHub repository:
+
+Go to github.com
+
+Click New repository
+
+Give it a name and make it public (so your sir can access)
+
+On your local project folder (VS Code terminal):
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/repo-name.git
+git push -u origin main
+
+
+Replace username and repo-name with your GitHub info.
+
+✅ Now your code is on GitHub.
+
+Step 2: Deploy online
+
+Here are easy hosting options:
+
+A) GitHub Pages (for HTML/CSS/JS or simple React sites)
+
+Go to your repository on GitHub
+
+Click Settings → Pages
+
+Source → Branch → main → folder → /root
+
+Click Save
+
+GitHub will give you a URL like:
+
+https://username.github.io/repo-name/
+
+
+✅ Send this URL to your sir. He can access it anytime.
+
+B) Netlify (for React, Vite, Node frontend projects)
+
+Go to netlify.com
+ and sign in with GitHub
+
+Click New Site → Import from GitHub
+
+Select your repository
+
+For React/Vite:
+
+Build command: npm run build
+
+Publish directory: build (React) or dist (Vite)
+
+Click Deploy
+
+You get a link like:
+
+https://yourproject.netlify.app
+
+
+✅ Now your sir can see the site live anytime.
+
+C) Render / Railway (for Node.js or Python backends)
+
+If your project needs a server (Node/Express / Flask / Django):
+
+Sign up on Render
+ or Railway
+
+Connect your GitHub repo
+
+Deploy → it will give a public URL
+
+Your sir can access it anytime.
+
+💡 Tip: If it’s just a static frontend project (HTML/CSS/JS), GitHub Pages is easiest.
+If it has a backend or React build, Netlify is simpler.
