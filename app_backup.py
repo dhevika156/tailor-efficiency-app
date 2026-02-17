@@ -17,7 +17,7 @@ import tempfile
 st.set_page_config(layout="wide")
 
 # ----------------- Database Setup -----------------
-db_path = "factory.db"
+db_path = "tailor_backup.db"
 first_time = not os.path.exists(db_path)
 conn = sqlite3.connect(db_path, check_same_thread=False)
 cursor = conn.cursor()
