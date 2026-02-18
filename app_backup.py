@@ -139,59 +139,6 @@ if page == "Excel Data Entry":
 
             df = df[["worker_id", "name", "role", "work", "category", "target", "achieved", "entry_date"]]
             df.to_sql("daily", conn, if_exists="append", index=False)
-
-# ================= DELETE DATE SECTION =================
-st.markdown("## 🗑 Delete Full Date Data")
-
-delete_date = st.date_input(
-    "Select Date to Delete",
-    key="delete_date"
-)
-
-if st.button("❌ Delete Selected Date Data"):
-    cursor.execute(
-        "DELETE FROM daily WHERE entry_date=?",
-        (str(delete_date),)
-    )
-    conn.commit()
-
-    if cursor.rowcount > 0:
-        st.success(f"✅ All records for {delete_date} deleted successfully.")
-    else:
-        st.warning("⚠️ No records found for selected date.")
-
-
-# ================= EDIT DATE SECTION =================
-st.markdown("## ✏️ Edit Date (Change Full Day Date)")
-
-old_date = st.date_input(
-    "Select Old Date",
-    key="old_date"
-)
-
-new_date = st.date_input(
-    "Select New Date",
-    key="new_date"
-)
-
-confirm_edit = st.checkbox("Confirm Date Update")
-
-if st.button("🔄 Update Date"):
-    if confirm_edit:
-        cursor.execute(
-            "UPDATE daily SET entry_date=? WHERE entry_date=?",
-            (str(new_date), str(old_date))
-        )
-        conn.commit()
-
-        if cursor.rowcount > 0:
-            st.success(f"✅ Date updated from {old_date} to {new_date}")
-        else:
-            st.warning("⚠️ No records found for selected old date.")
-    else:
-        st.warning("Please confirm before updating date.")
-
-
             st.success("✅ Data saved successfully")
         else:
             st.warning("Paste Excel data first")
