@@ -140,10 +140,6 @@ if page == "Excel Data Entry":
             df = df[["worker_id", "name", "role", "work", "category", "target", "achieved", "entry_date"]]
             df.to_sql("daily", conn, if_exists="append", index=False)
 
-            st.success("✅ Data saved successfully")
-        else:
-            st.warning("Paste Excel data first")
-
 # ================= DELETE DATE SECTION =================
 st.markdown("## 🗑 Delete Full Date Data")
 
@@ -194,6 +190,11 @@ if st.button("🔄 Update Date"):
             st.warning("⚠️ No records found for selected old date.")
     else:
         st.warning("Please confirm before updating date.")
+
+
+            st.success("✅ Data saved successfully")
+        else:
+            st.warning("Paste Excel data first")
 
 
 # ================= DAILY REPORT =================
